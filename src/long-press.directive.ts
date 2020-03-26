@@ -52,11 +52,14 @@ export class LongPressDirective {
     }
 
     @HostListener('mouseup', ['$event'])
+    @HostListener('touchend', ['$event'])
     public onMouseUp(event: MouseEvent): void {
         this.mouseups$.next(event);
     }
 
     @HostListener('mousedown', ['$event']) 
+    @HostListener('touchstart', ['$event'])
+
     public onMouseDown(event: MouseEvent): void {
         this.mousedowns$.next(event);
     }
