@@ -16,7 +16,7 @@ import 'rxjs/add/operator/repeat';
 })
 export class LongPressDirective {
     @Input() public longPress: number = 500;
-    @Output() public onRelease: EventEmitter<MouseEvent> = new EventEmitter();
+    @Output() public onRelease: EventEmitter<any> = new EventEmitter();
 
     public mouseups$ = new Subject();
     public mousedowns$ = new Subject();
@@ -34,7 +34,7 @@ export class LongPressDirective {
             .repeat()
             .map(items => items[1])
             .takeUntil(this.destroys$)
-            .subscribe((event: MouseEvent) => {
+            .subscribe((event: any) => {
                 this.onRelease.emit(event);
             });
     }
@@ -51,16 +51,16 @@ export class LongPressDirective {
             .filter(i => i > this.longPress);
     }
 
-    @HostListener('mouseup', ['$event'])
+    
     @HostListener('touchend', ['$event'])
-    public onMouseUp(event: MouseEvent): void {
+    @HostListener('mouseup', ['$event'])
+    public onMouseUp(event:any): void {
         this.mouseups$.next(event);
     }
-
-    @HostListener('mousedown', ['$event']) 
+    
     @HostListener('touchstart', ['$event'])
-
-    public onMouseDown(event: MouseEvent): void {
+    @HostListener('mousedown', ['$event']) 
+    public onMouseDown(event:any): void {
         this.mousedowns$.next(event);
     }
 }
