@@ -1,6 +1,6 @@
 {
   "name": "ngx-long-press",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Long Press directive for Angular",
   "scripts": {
     "prepublish": "npm run clean && npm run build",
@@ -18,8 +18,8 @@
     "clean:generated": "find src \\( -name '*.js' -o -name '*.d.ts' -o -name '*.js.map' -o -name '*.metadata.json'  \\) -type f -delete"
   },
   "author": {
-    "name": "Giancarlo Buomprisco",
-    "email": "giancarlopsk@gmail.com"
+    "name": "Manish Kumar",
+    "email": "manishbit97@gmail.com"
   },
   "contributors": [],
   "license": "MIT",
@@ -87,7 +87,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/Gbuomprisco/ngx-long-press"
+    "url": "https://github.com/manishbit97/ngx-long-press/"
   },
   "bugs": {
     "url": "https://github.com/Gbuomprisco/ngx-long-press/issues"
